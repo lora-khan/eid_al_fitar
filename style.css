@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Spice&family=Rubik+Scribble&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font for a unique look */
+    color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+    font-family: "Bungee Inline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+#moon-star {
+    width: 200px;
+    height: auto;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 10px #ffcc00);
+    animation: shadow-glow 5s ease-in-out infinite alternate;
+    border-radius: 50%;
+}
+
+#musicButton {
+    background-color: #fff;
+    color: rebeccapurple;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#musicButton:hover {
+    background-color: rebeccapurple;
+    color: #fff;
+}
+
+#fireworks {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHp1dGs0b2FwYjF5eHgzYjJtMmwzNWZuaGMxMTNwcDdoOWt3N3Z2aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MViYNpI0wx69zX7j7w/giphy.gif'); /* Fireworks animation */
+    background-size: cover;
+    animation: fireworks 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes shadow-glow {
+    0% {
+        filter: drop-shadow(0 0 10px #ffcc00);
+    }
+    100% {
+        filter: drop-shadow(0 0 20px #ffcc00);
+    }
+}
+
+@keyframes fireworks {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes dance {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+#dance {
+    display: none;
+    border-radius: 50%;
+    width: 250px;
+    margin-top: 20px;
+}
+
+@keyframes button-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.playing #musicButton {
+    animation: button-spin 2s linear infinite;
+}
